@@ -13,17 +13,21 @@ function App() {
       goblinFormHP, which is how we track the user input for the current HP of the goblin in the form
       goblinFormColor, which is how we track the user input for the current color of the goblin in the form
 */
-  const [allGoblins, setAllGoblins] = useState([]);
+  const [allGoblins, setAllGoblins] = useState([{ id: 1,
+    name: 'Stoopid',
+    hp: 4,
+    color: 'green' }]);
   const [goblinFormName, setGoblinFormName] = useState('');
   const [goblinFormHP, setGoblinFormHP] = useState('');
   const [goblinFormColor, setGoblinFormColor] = useState('');
-  const [visibleGoblins, setVisibleGoblins] = useState(allGoblins);
+  const [visibleGoblins, setVisibleGoblins] = useState(null);
+  console.log(allGoblins);
 
 
-
-  function submitGoblin() {
+  function submitGoblin(e) {
+    e.preventDefault();
     const newGoblin = {
-      id: Math.ceil(Math.random()),
+      id: Math.random(),
       name: goblinFormName,
       hp: goblinFormHP,
       color: goblinFormColor,
