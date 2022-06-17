@@ -21,7 +21,7 @@ function App() {
   const [goblinFormHP, setGoblinFormHP] = useState('');
   const [goblinFormColor, setGoblinFormColor] = useState('');
   const [visibleGoblins, setVisibleGoblins] = useState(null);
-  console.log(allGoblins);
+  
 
 
   function submitGoblin(e) {
